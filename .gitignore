@@ -1,0 +1,5 @@
+*/xcode/build/
+*/vc2012/Release/
+*/vc2012/Debug/
+*.sdf
+.DS_Store
