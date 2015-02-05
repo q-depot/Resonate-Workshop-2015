@@ -56,9 +56,7 @@
 
 #include "Tlc5940.h"
 
-//const int tlcNumOutputs         = 16;
-//const int tlcNumTlcs            = 2;
-const int tlcTotalNumOutputs    = 20;//tlcNumOutputs * tlcNumTlcs;
+const int tlcTotalNumOutputs    = 32;
 
 int tlcOutputs[tlcTotalNumOutputs];
 int tlcOutputIdx;
