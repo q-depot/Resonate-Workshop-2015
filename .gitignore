@@ -2,4 +2,5 @@
 */vc2012/Release/
 */vc2012/Debug/
 *.sdf
+*.opensdf
 .DS_Store

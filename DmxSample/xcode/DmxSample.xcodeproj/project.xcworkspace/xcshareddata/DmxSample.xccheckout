@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>53E8B91A-AEC2-4FFC-AE19-C9F84F5E27EC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DmxSample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8600AA8BE05C8E405BF49B61E0887F1254221ECF</key>
+		<string>github.com:q-depot/Resonate-Workshop-2015.git</string>
+		<key>9E89B19AAB6B1B0F22A9AB78297ACF329EF5A101</key>
+		<string>github.com:q-depot/Cinder-DMXusbPro.git</string>
+		<key>AD4B458D0D225ED63FAE0155615993B7D3ECE020</key>
+		<string>git://github.com/cinder/Cinder.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DmxSample/xcode/DmxSample.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8600AA8BE05C8E405BF49B61E0887F1254221ECF</key>
+		<string>../../../..</string>
+		<key>9E89B19AAB6B1B0F22A9AB78297ACF329EF5A101</key>
+		<string>../../../../../../blocks/Cinder-DMXusbPro</string>
+		<key>AD4B458D0D225ED63FAE0155615993B7D3ECE020</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:q-depot/Resonate-Workshop-2015.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8600AA8BE05C8E405BF49B61E0887F1254221ECF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AD4B458D0D225ED63FAE0155615993B7D3ECE020</string>
+			<key>IDESourceControlWCCName</key>
+			<string>..</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9E89B19AAB6B1B0F22A9AB78297ACF329EF5A101</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Cinder-DMXusbPro</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8600AA8BE05C8E405BF49B61E0887F1254221ECF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Resonate-Workshop-2015</string>
+		</dict>
+	</array>
+</dict>
+</plist>
