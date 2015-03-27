@@ -24,9 +24,9 @@
 		<key>8600AA8BE05C8E405BF49B61E0887F1254221ECF</key>
 		<string>../../../..</string>
 		<key>9E89B19AAB6B1B0F22A9AB78297ACF329EF5A101</key>
-		<string>../../../../../../blocks/Cinder-DMXusbPro</string>
+		<string>../../../../../blocks/Cinder-DMXusbPro</string>
 		<key>AD4B458D0D225ED63FAE0155615993B7D3ECE020</key>
-		<string>../../../../../..</string>
+		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:q-depot/Resonate-Workshop-2015.git</string>
@@ -42,7 +42,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>AD4B458D0D225ED63FAE0155615993B7D3ECE020</string>
 			<key>IDESourceControlWCCName</key>
-			<string>..</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
