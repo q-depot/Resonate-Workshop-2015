@@ -1,0 +1,178 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Blocks">
+      <UniqueIdentifier>{84E2664C-8D96-437B-B291-3C601C1B5758}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Asio">
+      <UniqueIdentifier>{278657E6-3A69-4042-9CF4-120FFF66F816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Asio\src">
+      <UniqueIdentifier>{5564D450-EEBC-4BE5-9A74-1EAB5BD84AA3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\PixelPusher">
+      <UniqueIdentifier>{A95E64BA-C4AD-4398-B627-FA59233C6DC5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\PixelPusher\src">
+      <UniqueIdentifier>{205FF8DE-C9AE-42FE-9711-68BE7115EBD6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\PixelPusherSurfaceApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PixelPusherSurfaceApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\..\blocks\Cinder-Asio\src\ClientInterface.cpp">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\blocks\Cinder-Asio\src\DispatcherInterface.cpp">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\blocks\Cinder-Asio\src\ServerInterface.cpp">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\blocks\Cinder-Asio\src\SessionInterface.cpp">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\blocks\Cinder-Asio\src\TcpClient.cpp">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\blocks\Cinder-Asio\src\TcpServer.cpp">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\blocks\Cinder-Asio\src\TcpSession.cpp">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\blocks\Cinder-Asio\src\UdpClient.cpp">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\blocks\Cinder-Asio\src\UdpServer.cpp">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\blocks\Cinder-Asio\src\UdpSession.cpp">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\blocks\Cinder-Asio\src\WaitTimer.cpp">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\ClientEventHandlerInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\ClientInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\DispatcherEventHandlerInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\DispatcherInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\ServerEventHandlerInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\ServerInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\SessionEventHandlerInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\SessionInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\TcpClient.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\TcpClientEventHandlerInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\TcpServer.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\TcpServerEventHandlerInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\TcpSession.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\TcpSessionEventHandlerInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\UdpClient.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\UdpClientEventHandlerInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\UdpServer.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\UdpServerEventHandlerInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\UdpSession.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\UdpSessionEventHandlerInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\WaitTimer.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-Asio\src\WaitTimerEventHandlerInterface.h">
+      <Filter>Blocks\Asio\src</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\..\blocks\Cinder-PixelPusher\src\PixelPusher.cpp">
+      <Filter>Blocks\PixelPusher\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\blocks\Cinder-PixelPusher\src\PusherDiscoveryService.cpp">
+      <Filter>Blocks\PixelPusher\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\blocks\Cinder-PixelPusher\src\Strip.cpp">
+      <Filter>Blocks\PixelPusher\src</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-PixelPusher\src\DeviceHeader.h">
+      <Filter>Blocks\PixelPusher\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-PixelPusher\src\Pixel.h">
+      <Filter>Blocks\PixelPusher\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-PixelPusher\src\PixelPusher.h">
+      <Filter>Blocks\PixelPusher\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-PixelPusher\src\PusherDiscoveryService.h">
+      <Filter>Blocks\PixelPusher\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-PixelPusher\src\PusherGroup.h">
+      <Filter>Blocks\PixelPusher\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\blocks\Cinder-PixelPusher\src\Strip.h">
+      <Filter>Blocks\PixelPusher\src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

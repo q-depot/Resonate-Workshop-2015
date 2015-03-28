@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0091D8F80E81B9330029341E /* OpenGL.framework */; };
+		00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784AF0FF439BC000DE1D7 /* Accelerate.framework */; };
+		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
+		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
+		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
+		2470A59CDE06442F933EBC0B /* ServerInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE4CDCCEC3AA4AE19FC9D16D /* ServerInterface.cpp */; };
+		29509AC303E3479AB9829C74 /* WaitTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC4AB2370ACB4BD896A61F2D /* WaitTimer.cpp */; };
+		3B97500493CD4081B32D8831 /* UdpServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78CA1529DDBA4722A2F2BD49 /* UdpServer.cpp */; };
+		4313A256EEFF4C8CA93EBFD3 /* TcpServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A7B11C9369D4816A5A76603 /* TcpServer.cpp */; };
+		50F56D16AA6B4A9CAE2AD35A /* TcpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EECAF75CB6AF4A3EAFBF5486 /* TcpClient.cpp */; };
+		529B153CA0CE465DB801170B /* PusherDiscoveryService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 162DDCA7DC43468CA54A5A6E /* PusherDiscoveryService.cpp */; };
+		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
+		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
+		5951FFE9642C4AB483D6DB86 /* DispatcherInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98AD529F834F467BB134374C /* DispatcherInterface.cpp */; };
+		640DC48B25D549FE80EEF1AB /* Strip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A57F061B6CA45B787183445 /* Strip.cpp */; };
+		87FCAB83EA9F44468299F836 /* TcpSession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 863F121D1A55485E896D0CFD /* TcpSession.cpp */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		9669560BECEA40D29CD3982C /* PixelPusher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD8AE241FE5F44EBB4F60D09 /* PixelPusher.cpp */; };
+		9C98BD3A30444976AA6191D1 /* UdpSession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B167CCE095F4674B5DB4283 /* UdpSession.cpp */; };
+		AC40C59F22034877A5598C68 /* PixelPusherBasicApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A840A2A8284C45389B899B3B /* PixelPusherBasicApp.cpp */; };
+		C4BDF651363A4B5DB7207157 /* ClientInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CA2A9E98832C4C4F9845780C /* ClientInterface.cpp */; };
+		E18CA9EC42D34C82A09E7FB3 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 842845D03B7D4A20B243B2DA /* CinderApp.icns */; };
+		EC9CA4616DE94723B8BCB0DC /* UdpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F658E37A3084A7E9188C05B /* UdpClient.cpp */; };
+		F54DBC0A00F7470287B09F45 /* SessionInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93A438AE33D843899BC4EF32 /* SessionInterface.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0091D8F80E81B9330029341E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		00B784AF0FF439BC000DE1D7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		00B784B10FF439BC000DE1D7 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		00B784B20FF439BC000DE1D7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		0A57F061B6CA45B787183445 /* Strip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = Strip.cpp; path = "../../../../blocks/Cinder-PixelPusher/src/Strip.cpp"; sourceTree = "<group>"; };
+		0DD89C8B0B594FD3A08004B3 /* PusherGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PusherGroup.h; path = "../../../../blocks/Cinder-PixelPusher/src/PusherGroup.h"; sourceTree = "<group>"; };
+		0F658E37A3084A7E9188C05B /* UdpClient.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = UdpClient.cpp; path = "../../../../blocks/Cinder-Asio/src/UdpClient.cpp"; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		11C710951464434DB721119A /* WaitTimerEventHandlerInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WaitTimerEventHandlerInterface.h; path = "../../../../blocks/Cinder-Asio/src/WaitTimerEventHandlerInterface.h"; sourceTree = "<group>"; };
+		162DDCA7DC43468CA54A5A6E /* PusherDiscoveryService.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = PusherDiscoveryService.cpp; path = "../../../../blocks/Cinder-PixelPusher/src/PusherDiscoveryService.cpp"; sourceTree = "<group>"; };
+		1BE709DE880F490783FE25F4 /* ServerInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ServerInterface.h; path = "../../../../blocks/Cinder-Asio/src/ServerInterface.h"; sourceTree = "<group>"; };
+		204AB94EBBC5451995ADDE8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2C8443F7A4114AA783E6393B /* TcpSessionEventHandlerInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TcpSessionEventHandlerInterface.h; path = "../../../../blocks/Cinder-Asio/src/TcpSessionEventHandlerInterface.h"; sourceTree = "<group>"; };
+		2CE72EC71CFA4806AB25B23C /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
+		2F82597A4E84418ABD307274 /* DispatcherInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DispatcherInterface.h; path = "../../../../blocks/Cinder-Asio/src/DispatcherInterface.h"; sourceTree = "<group>"; };
+		2FD48EA82AF04D6CAF763BC8 /* SessionEventHandlerInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SessionEventHandlerInterface.h; path = "../../../../blocks/Cinder-Asio/src/SessionEventHandlerInterface.h"; sourceTree = "<group>"; };
+		4278BDDF704049C5A4EA6F9F /* ClientEventHandlerInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ClientEventHandlerInterface.h; path = "../../../../blocks/Cinder-Asio/src/ClientEventHandlerInterface.h"; sourceTree = "<group>"; };
+		4CC0D08D79FB479C84FB1908 /* ServerEventHandlerInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ServerEventHandlerInterface.h; path = "../../../../blocks/Cinder-Asio/src/ServerEventHandlerInterface.h"; sourceTree = "<group>"; };
+		5119A41375614DBE92FD751D /* UdpClientEventHandlerInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UdpClientEventHandlerInterface.h; path = "../../../../blocks/Cinder-Asio/src/UdpClientEventHandlerInterface.h"; sourceTree = "<group>"; };
+		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
+		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
+		5B11D2A5639F445691645517 /* Pixel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Pixel.h; path = "../../../../blocks/Cinder-PixelPusher/src/Pixel.h"; sourceTree = "<group>"; };
+		6094B406BCDF470A99FC77B4 /* TcpSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TcpSession.h; path = "../../../../blocks/Cinder-Asio/src/TcpSession.h"; sourceTree = "<group>"; };
+		688598A047AD499FAF88ECD9 /* WaitTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WaitTimer.h; path = "../../../../blocks/Cinder-Asio/src/WaitTimer.h"; sourceTree = "<group>"; };
+		6CDE1AA6DE5148BAA237171B /* PusherDiscoveryService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PusherDiscoveryService.h; path = "../../../../blocks/Cinder-PixelPusher/src/PusherDiscoveryService.h"; sourceTree = "<group>"; };
+		6F44633F83E14A968707F62D /* PixelPusherBasic_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = PixelPusherBasic_Prefix.pch; sourceTree = "<group>"; };
+		78CA1529DDBA4722A2F2BD49 /* UdpServer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = UdpServer.cpp; path = "../../../../blocks/Cinder-Asio/src/UdpServer.cpp"; sourceTree = "<group>"; };
+		7A7B11C9369D4816A5A76603 /* TcpServer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = TcpServer.cpp; path = "../../../../blocks/Cinder-Asio/src/TcpServer.cpp"; sourceTree = "<group>"; };
+		8108F898AD6F4F09B87599AB /* DeviceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DeviceHeader.h; path = "../../../../blocks/Cinder-PixelPusher/src/DeviceHeader.h"; sourceTree = "<group>"; };
+		842845D03B7D4A20B243B2DA /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
+		863F121D1A55485E896D0CFD /* TcpSession.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = TcpSession.cpp; path = "../../../../blocks/Cinder-Asio/src/TcpSession.cpp"; sourceTree = "<group>"; };
+		8875552941D942CAB1D02643 /* TcpServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TcpServer.h; path = "../../../../blocks/Cinder-Asio/src/TcpServer.h"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* PixelPusherBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixelPusherBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D4DBBE187664261988FA80B /* UdpSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UdpSession.h; path = "../../../../blocks/Cinder-Asio/src/UdpSession.h"; sourceTree = "<group>"; };
+		90091D038765470286DF7A19 /* UdpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UdpClient.h; path = "../../../../blocks/Cinder-Asio/src/UdpClient.h"; sourceTree = "<group>"; };
+		93A438AE33D843899BC4EF32 /* SessionInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = SessionInterface.cpp; path = "../../../../blocks/Cinder-Asio/src/SessionInterface.cpp"; sourceTree = "<group>"; };
+		98AD529F834F467BB134374C /* DispatcherInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = DispatcherInterface.cpp; path = "../../../../blocks/Cinder-Asio/src/DispatcherInterface.cpp"; sourceTree = "<group>"; };
+		9B167CCE095F4674B5DB4283 /* UdpSession.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = UdpSession.cpp; path = "../../../../blocks/Cinder-Asio/src/UdpSession.cpp"; sourceTree = "<group>"; };
+		9DEE65449F744E93BC8CD36C /* TcpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TcpClient.h; path = "../../../../blocks/Cinder-Asio/src/TcpClient.h"; sourceTree = "<group>"; };
+		A1650FDBDA774B0D9884C06E /* ClientInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ClientInterface.h; path = "../../../../blocks/Cinder-Asio/src/ClientInterface.h"; sourceTree = "<group>"; };
+		A537BF341B2E4A259CCD3171 /* SessionInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SessionInterface.h; path = "../../../../blocks/Cinder-Asio/src/SessionInterface.h"; sourceTree = "<group>"; };
+		A840A2A8284C45389B899B3B /* PixelPusherBasicApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = PixelPusherBasicApp.cpp; path = ../src/PixelPusherBasicApp.cpp; sourceTree = "<group>"; };
+		A8BBF5115AAB4BDB98E72325 /* DispatcherEventHandlerInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DispatcherEventHandlerInterface.h; path = "../../../../blocks/Cinder-Asio/src/DispatcherEventHandlerInterface.h"; sourceTree = "<group>"; };
+		AAA675BD4F1D4868B93C27E5 /* TcpClientEventHandlerInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TcpClientEventHandlerInterface.h; path = "../../../../blocks/Cinder-Asio/src/TcpClientEventHandlerInterface.h"; sourceTree = "<group>"; };
+		B19403C448D540B8BD7E7F17 /* PixelPusher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PixelPusher.h; path = "../../../../blocks/Cinder-PixelPusher/src/PixelPusher.h"; sourceTree = "<group>"; };
+		BC057418F86545AF8471FCBC /* TcpServerEventHandlerInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TcpServerEventHandlerInterface.h; path = "../../../../blocks/Cinder-Asio/src/TcpServerEventHandlerInterface.h"; sourceTree = "<group>"; };
+		C26E31DA420A43D1B5E7D84D /* UdpServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UdpServer.h; path = "../../../../blocks/Cinder-Asio/src/UdpServer.h"; sourceTree = "<group>"; };
+		C9F9E6BD6BB249769CAA46D8 /* UdpSessionEventHandlerInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UdpSessionEventHandlerInterface.h; path = "../../../../blocks/Cinder-Asio/src/UdpSessionEventHandlerInterface.h"; sourceTree = "<group>"; };
+		CA2A9E98832C4C4F9845780C /* ClientInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = ClientInterface.cpp; path = "../../../../blocks/Cinder-Asio/src/ClientInterface.cpp"; sourceTree = "<group>"; };
+		CD8AE241FE5F44EBB4F60D09 /* PixelPusher.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = PixelPusher.cpp; path = "../../../../blocks/Cinder-PixelPusher/src/PixelPusher.cpp"; sourceTree = "<group>"; };
+		D3D783E462C3482C899255FC /* Strip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Strip.h; path = "../../../../blocks/Cinder-PixelPusher/src/Strip.h"; sourceTree = "<group>"; };
+		E06D6FC6C5F54CD2AFC5F4AE /* UdpServerEventHandlerInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UdpServerEventHandlerInterface.h; path = "../../../../blocks/Cinder-Asio/src/UdpServerEventHandlerInterface.h"; sourceTree = "<group>"; };
+		EECAF75CB6AF4A3EAFBF5486 /* TcpClient.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = TcpClient.cpp; path = "../../../../blocks/Cinder-Asio/src/TcpClient.cpp"; sourceTree = "<group>"; };
+		FC4AB2370ACB4BD896A61F2D /* WaitTimer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = WaitTimer.cpp; path = "../../../../blocks/Cinder-Asio/src/WaitTimer.cpp"; sourceTree = "<group>"; };
+		FE4CDCCEC3AA4AE19FC9D16D /* ServerInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = ServerInterface.cpp; path = "../../../../blocks/Cinder-Asio/src/ServerInterface.cpp"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */,
+				5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */,
+				5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */,
+				00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */,
+				00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */,
+				00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */,
+				00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01B97315FEAEA392516A2CEA /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				65D7C0F0D6A845BCABCC4D04 /* Asio */,
+				1062CBF148704F30A2C6BC12 /* PixelPusher */,
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
+		080E96DDFE201D6D7F000001 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A840A2A8284C45389B899B3B /* PixelPusherBasicApp.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00B784AF0FF439BC000DE1D7 /* Accelerate.framework */,
+				00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */,
+				00B784B10FF439BC000DE1D7 /* AudioUnit.framework */,
+				00B784B20FF439BC000DE1D7 /* CoreAudio.framework */,
+				5323E6B50EAFCA7E003A9687 /* QTKit.framework */,
+				5323E6B10EAFCA74003A9687 /* CoreVideo.framework */,
+				0091D8F80E81B9330029341E /* OpenGL.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		1062CBF148704F30A2C6BC12 /* PixelPusher */ = {
+			isa = PBXGroup;
+			children = (
+				3E043A4D12F64FCBB9A7E2AB /* src */,
+			);
+			name = PixelPusher;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* PixelPusherBasic.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* PixelPusherBasic */ = {
+			isa = PBXGroup;
+			children = (
+				01B97315FEAEA392516A2CEA /* Blocks */,
+				29B97315FDCFA39411CA2CEA /* Headers */,
+				080E96DDFE201D6D7F000001 /* Source */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = PixelPusherBasic;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				2CE72EC71CFA4806AB25B23C /* Resources.h */,
+				6F44633F83E14A968707F62D /* PixelPusherBasic_Prefix.pch */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				842845D03B7D4A20B243B2DA /* CinderApp.icns */,
+				204AB94EBBC5451995ADDE8B /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E043A4D12F64FCBB9A7E2AB /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B19403C448D540B8BD7E7F17 /* PixelPusher.h */,
+				CD8AE241FE5F44EBB4F60D09 /* PixelPusher.cpp */,
+				162DDCA7DC43468CA54A5A6E /* PusherDiscoveryService.cpp */,
+				0A57F061B6CA45B787183445 /* Strip.cpp */,
+				8108F898AD6F4F09B87599AB /* DeviceHeader.h */,
+				5B11D2A5639F445691645517 /* Pixel.h */,
+				6CDE1AA6DE5148BAA237171B /* PusherDiscoveryService.h */,
+				0DD89C8B0B594FD3A08004B3 /* PusherGroup.h */,
+				D3D783E462C3482C899255FC /* Strip.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		65D7C0F0D6A845BCABCC4D04 /* Asio */ = {
+			isa = PBXGroup;
+			children = (
+				C131CD016369428D9F07A878 /* src */,
+			);
+			name = Asio;
+			sourceTree = "<group>";
+		};
+		C131CD016369428D9F07A878 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				CA2A9E98832C4C4F9845780C /* ClientInterface.cpp */,
+				98AD529F834F467BB134374C /* DispatcherInterface.cpp */,
+				FE4CDCCEC3AA4AE19FC9D16D /* ServerInterface.cpp */,
+				93A438AE33D843899BC4EF32 /* SessionInterface.cpp */,
+				EECAF75CB6AF4A3EAFBF5486 /* TcpClient.cpp */,
+				7A7B11C9369D4816A5A76603 /* TcpServer.cpp */,
+				863F121D1A55485E896D0CFD /* TcpSession.cpp */,
+				0F658E37A3084A7E9188C05B /* UdpClient.cpp */,
+				78CA1529DDBA4722A2F2BD49 /* UdpServer.cpp */,
+				9B167CCE095F4674B5DB4283 /* UdpSession.cpp */,
+				FC4AB2370ACB4BD896A61F2D /* WaitTimer.cpp */,
+				4278BDDF704049C5A4EA6F9F /* ClientEventHandlerInterface.h */,
+				A1650FDBDA774B0D9884C06E /* ClientInterface.h */,
+				A8BBF5115AAB4BDB98E72325 /* DispatcherEventHandlerInterface.h */,
+				2F82597A4E84418ABD307274 /* DispatcherInterface.h */,
+				4CC0D08D79FB479C84FB1908 /* ServerEventHandlerInterface.h */,
+				1BE709DE880F490783FE25F4 /* ServerInterface.h */,
+				2FD48EA82AF04D6CAF763BC8 /* SessionEventHandlerInterface.h */,
+				A537BF341B2E4A259CCD3171 /* SessionInterface.h */,
+				9DEE65449F744E93BC8CD36C /* TcpClient.h */,
+				AAA675BD4F1D4868B93C27E5 /* TcpClientEventHandlerInterface.h */,
+				8875552941D942CAB1D02643 /* TcpServer.h */,
+				BC057418F86545AF8471FCBC /* TcpServerEventHandlerInterface.h */,
+				6094B406BCDF470A99FC77B4 /* TcpSession.h */,
+				2C8443F7A4114AA783E6393B /* TcpSessionEventHandlerInterface.h */,
+				90091D038765470286DF7A19 /* UdpClient.h */,
+				5119A41375614DBE92FD751D /* UdpClientEventHandlerInterface.h */,
+				C26E31DA420A43D1B5E7D84D /* UdpServer.h */,
+				E06D6FC6C5F54CD2AFC5F4AE /* UdpServerEventHandlerInterface.h */,
+				8D4DBBE187664261988FA80B /* UdpSession.h */,
+				C9F9E6BD6BB249769CAA46D8 /* UdpSessionEventHandlerInterface.h */,
+				688598A047AD499FAF88ECD9 /* WaitTimer.h */,
+				11C710951464434DB721119A /* WaitTimerEventHandlerInterface.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* PixelPusherBasic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "PixelPusherBasic" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PixelPusherBasic;
+			productInstallPath = "$(HOME)/Applications";
+			productName = PixelPusherBasic;
+			productReference = 8D1107320486CEB800E47090 /* PixelPusherBasic.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PixelPusherBasic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* PixelPusherBasic */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* PixelPusherBasic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18CA9EC42D34C82A09E7FB3 /* CinderApp.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC40C59F22034877A5598C68 /* PixelPusherBasicApp.cpp in Sources */,
+				C4BDF651363A4B5DB7207157 /* ClientInterface.cpp in Sources */,
+				5951FFE9642C4AB483D6DB86 /* DispatcherInterface.cpp in Sources */,
+				2470A59CDE06442F933EBC0B /* ServerInterface.cpp in Sources */,
+				F54DBC0A00F7470287B09F45 /* SessionInterface.cpp in Sources */,
+				50F56D16AA6B4A9CAE2AD35A /* TcpClient.cpp in Sources */,
+				4313A256EEFF4C8CA93EBFD3 /* TcpServer.cpp in Sources */,
+				87FCAB83EA9F44468299F836 /* TcpSession.cpp in Sources */,
+				EC9CA4616DE94723B8BCB0DC /* UdpClient.cpp in Sources */,
+				3B97500493CD4081B32D8831 /* UdpServer.cpp in Sources */,
+				9C98BD3A30444976AA6191D1 /* UdpSession.cpp in Sources */,
+				29509AC303E3479AB9829C74 /* WaitTimer.cpp in Sources */,
+				9669560BECEA40D29CD3982C /* PixelPusher.cpp in Sources */,
+				529B153CA0CE465DB801170B /* PusherDiscoveryService.cpp in Sources */,
+				640DC48B25D549FE80EEF1AB /* Strip.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PixelPusherBasic_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder_d.a\"";
+				PRODUCT_NAME = PixelPusherBasic;
+				SYMROOT = ./build;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_FAST_MATH = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PixelPusherBasic_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"NDEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder.a\"";
+				PRODUCT_NAME = PixelPusherBasic;
+				STRIP_INSTALLED_PRODUCT = YES;
+				SYMROOT = ./build;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = i386;
+				CINDER_PATH = ../../../..;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../../../blocks/Cinder-Asio/src\" \"../../../../blocks/Cinder-PixelPusher/src\"";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = i386;
+				CINDER_PATH = ../../../..;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../../../blocks/Cinder-Asio/src\" \"../../../../blocks/Cinder-PixelPusher/src\"";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "PixelPusherBasic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PixelPusherBasic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
