@@ -54,6 +54,7 @@ void PixelPusherSurfaceApp::setup()
 {
     // Create a instance of the Discovery Service
     mPusherDiscoveryService = PusherDiscoveryService::create( io_service() );
+    PusherDiscoveryService::enableColorCorrection(true);
     
     //
     mOutputSurf     = Surface8u( 185, 185, false );

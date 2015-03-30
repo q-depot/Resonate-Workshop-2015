@@ -41,23 +41,32 @@ public:
     gl::TextureFontRef          mFontBig, mFontSmall;
     
     params::InterfaceGl         mParams;
+    float                       mSpeed;
+    int                         mOffset;
+    Color                       mColor;
 };
 
 
 void PixelPusherBasicApp::setup()
 {
+    setWindowSize( 800, 600 );
+
     // Create a instance of the Discovery Service
     mPusherDiscoveryService = PusherDiscoveryService::create( io_service() );
-    
+    PusherDiscoveryService::enableColorCorrection(true);
+
     mFontBig        = gl::TextureFont::create( Font( "Arial", 16 ) );
     mFontSmall      = gl::TextureFont::create( Font( "Arial", 12 ) );
-    
+    mSpeed          = 1.0f;
+    mOffset         = 0;
+    mColor          = Color::white();
     
     // Initialise the GUI
     mParams         = params::InterfaceGl( "params", Vec2i( 260, 150 ) );
-    mParams.setPosition( Vec2i( 300, 15 ) );
-    
-    setWindowSize( 800, 600 );
+    mParams.setPosition( Vec2i( 200, 150 ) );
+    mParams.addParam( "Speed",  &mSpeed ).min(0.0f).max(25.0f).step(0.1f);
+    mParams.addParam( "Offset", &mOffset );
+    mParams.addParam( "Color",  &mColor );
 }
 
 
@@ -86,17 +95,21 @@ void PixelPusherBasicApp::updatePushers()
     std::vector<PixelPusherRef> pushers = mPusherDiscoveryService->getPushers();        // get connected devices
     std::vector<StripRef>       strips;
     std::vector<PixelRef>       pixels;
-    
+    uint8_t                     red, blue, green;
+
+    int c = 0;
     for( auto& pusher : pushers )
     {
         for( auto& strip : pusher->getStrips() )                                  // for each device get the Strips
         {
-            // for( size_t k=0; k < strip->getNumPixels(); k++ )
-            // strip->setPixel( k, 255, 255, 255 );
-            
-            for( auto& pixel : strip->getPixels() )                               // get the pixels
+            for( size_t k=0; k < strip->getNumPixels(); k++ )                               // get the pixels
             {
-                pixel->setColor( 255, 255, 255 );                                       // set the color 0-255
+                red     = mColor.r * 255 * ( sin( c * mOffset + getElapsedSeconds() * mSpeed ) + 1.0f ) * 0.5f;
+                blue    = mColor.b * 255;
+                green   = mColor.g * 255;
+
+                strip->setPixel( k,  red, green, blue );
+                c++;
             }
         }
     }
@@ -110,6 +123,7 @@ void PixelPusherBasicApp::draw()
     
     drawStrips();
     
+    gl::color( Color::white() );
     drawDebugInfo();
     
     mParams.draw();
@@ -118,9 +132,9 @@ void PixelPusherBasicApp::draw()
 
 void PixelPusherBasicApp::drawStrips()
 {
-    Vec2f                       size    = Vec2f( 10, 10 );
+    Vec2f                       size    = Vec2f( 2, 3 );
     Vec2f                       margin  = Vec2f( 10, 2 );
-    Vec2f                       topLeft = Vec2f( 25, 25 );
+    Vec2f                       topLeft = Vec2f( 200, 15 );
     Vec2f                       pos;
     
     std::vector<PixelPusherRef> pushers = mPusherDiscoveryService->getPushers();        // get connected devices
@@ -133,15 +147,15 @@ void PixelPusherBasicApp::drawStrips()
     {
         strips = pusher->getStrips();
         
-        for( auto stripN = 0; stripN < strips.size(); stripN ++ )                                  // for each device get the Strips
+        for( size_t stripN = 0; stripN < strips.size(); stripN ++ )                                  // for each device get the Strips
         {
             pixels = strips[stripN]->getPixels();
             
-            for( auto pixelN = 0; pixelN < pixels.size(); pixelN ++ )                              // get the pixels
+            for( size_t pixelN = 0; pixelN < pixels.size(); pixelN ++ )                              // get the pixels
             {
-                pos = topLeft + ( Vec2f( stripN, pixelN ) + margin ) * size;
+                pos = topLeft + ( Vec2f( pixelN, stripN ) * ( size ) );
                 gl::color( pixels[pixelN]->getColorRgb() );
-                
+
                 gl::vertex( pos );
                 gl::vertex( pos + Vec2f( size.x, 0 ) );
                 gl::vertex( pos + size );

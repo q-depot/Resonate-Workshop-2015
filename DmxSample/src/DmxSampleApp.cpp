@@ -25,7 +25,7 @@ using namespace ci::app;
 using namespace std;
 
 #define FIXTURES_NUM    12
-#define TRIGGERS_NUM    3
+#define TRIGGERS_NUM    1
 
 
 class DmxSampleApp : public AppNative {
@@ -33,9 +33,9 @@ class DmxSampleApp : public AppNative {
 public:
 
     void setup();
-	void update();
-	void draw();
-    
+    void update();
+    void draw();
+
     void updateTriggers();
     void updateFixtures();
     void drawLabels();
@@ -48,7 +48,7 @@ public:
         float   value;
         uint8_t dmxChannel;
     };
-    
+
     // the trigger is an abstract object that somehow change the fixtures brightness
     struct Trigger {
         Vec2f   pos;
@@ -74,7 +74,7 @@ void DmxSampleApp::setup()
     
     mSpeed      = 1.0f;
     mDrawLabels = true;
-    mFont       = gl::TextureFont::create( Font( "Arial", 14 ) );
+    mFont       = gl::TextureFont::create( Font( "Arial", 16 ) );
     
     // Initialise the GUI
     mParams = params::InterfaceGl("Params" , Vec2i( 180, 100 ) );
@@ -89,7 +89,14 @@ void DmxSampleApp::setup()
     // create a device passing the device name or a partial device name
     // useful if you want to swap device without changing the name
     
-    string dmxDevice    = "tty.usbserial-EN";               // find device by name
+    string dmxDevice;
+
+    #if defined( CINDER_MAC )
+        dmxDevice = "tty.usbserial-EN";
+    #elif defined( CINDER_MSW )
+        dmxDevice = "USB Serial Port";
+    #endif
+    
     mDmxController      = DMXPro::create( dmxDevice );
     
     if ( mDmxController->isConnected() )
@@ -201,7 +208,7 @@ void DmxSampleApp::draw()
         // draw the channel label
         if ( mDrawLabels )
         {
-            gl::color( Color::gray( 0.2f ) );
+            gl::color( Color::gray( 0.4f ) );
             mFont->drawString( to_string( mFixtures[k].dmxChannel ), mFixtures[k].pos + Vec2i( 22, 15 ) );
         }
     }
