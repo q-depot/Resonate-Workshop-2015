@@ -4,3 +4,4 @@
 *.sdf
 *.opensdf
 .DS_Store
+*.tlog
