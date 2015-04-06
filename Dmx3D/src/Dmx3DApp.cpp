@@ -1,5 +1,5 @@
 /*
- *  DmxSampleApp.cpp
+ *  Dmx3DApp.cpp
  *
  *  Created by Andrea Cuius
  *  The MIT License (MIT)
@@ -18,6 +18,7 @@
 #include "cinder/gl/TextureFont.h"
 #include "cinder/params/Params.h"
 #include "cinder/Rand.h"
+#include "cinder/MayaCamUI.h"
 #include "DMXPro.h"
 
 using namespace ci;
@@ -28,29 +29,35 @@ using namespace std;
 #define TRIGGERS_NUM    1
 
 
-class DmxSampleApp : public AppNative {
-
-public:
-
+class Dmx3DApp : public AppNative {
+    
+  public:
+    
     void setup();
-    void update();
-    void draw();
-
+    
+    void mouseDown( MouseEvent event );
+    void mouseDrag( MouseEvent event );
+    
+	void update();
+	void draw();
+    
     void updateTriggers();
     void updateFixtures();
     void drawLabels();
     
+    void drawGrid( int steps=10, float size=1.0f );      // size in meters
+    
     // we define a structure to hold the position and the brightness
     // value is a float and it store the brightness value normalised(0.0-1.0)
     struct Fixture {
-        Vec2f   pos;
+        Vec3f   pos;
         float   value;
         uint8_t dmxChannel;
     };
-
+    
     // the trigger is an abstract object that somehow change the fixtures brightness
     struct Trigger {
-        Vec2f   pos;
+        Vec3f   pos;
         float   radius;
         float   speed;
     };
@@ -64,11 +71,13 @@ public:
     bool                    mDrawLabels;
     
     gl::TextureFontRef      mFont;
+    MayaCamUI               mMayaCam;
 };
 
 
-void DmxSampleApp::setup()
+void Dmx3DApp::setup()
 {
+    
     setWindowSize( 1200, 800 );
     
     mSpeed      = 1.0f;
@@ -89,20 +98,21 @@ void DmxSampleApp::setup()
     // useful if you want to swap device without changing the name
     
     string dmxDevice;
-
-    #if defined( CINDER_MAC )
-        dmxDevice = "tty.usbserial-EN";
-    #elif defined( CINDER_MSW )
-        dmxDevice = "USB Serial Port";
-    #endif
+    
+#if defined( CINDER_MAC )
+    dmxDevice = "tty.usbserial-EN";
+#elif defined( CINDER_MSW )
+    dmxDevice = "USB Serial Port";
+#endif
     
     mDmxController      = DMXPro::create( dmxDevice );
     
     if ( mDmxController->isConnected() )
         console() << "DMX device connected" << endl;
-
+    
     float posAngle;
-    float radius = 250.0f;
+    float radius = 5.0f;
+    float height = 4.0f;
     
     // create the fixtures
     for ( int k=0; k < FIXTURES_NUM; k++ )
@@ -111,10 +121,10 @@ void DmxSampleApp::setup()
         
         Fixture fixture;
         
-        fixture.pos         = getWindowCenter() + radius * Vec2f( cos(posAngle), sin(posAngle) );
+        fixture.pos         = Vec3f( radius * cos(posAngle), height, radius * sin(posAngle) );
         fixture.value       = 0.0f;
         fixture.dmxChannel  = k;
-    
+        
         mFixtures.push_back( fixture );
     }
     
@@ -125,16 +135,35 @@ void DmxSampleApp::setup()
         
         Trigger trigger;
         
-        trigger.pos     = getWindowCenter() + radius * Vec2f( cos(posAngle), sin(posAngle) );
-        trigger.radius  = randFloat( 35.0f, 250.0f );
+        trigger.pos     = Vec3f( radius * cos(posAngle), height, radius * sin(posAngle) );
+        trigger.radius  = randFloat( 1.0f, 5.0f );
         trigger.speed   = randFloat( 0.005, 0.01 );
         
         mTriggers.push_back( trigger );
     }
+    
+    // init camera
+    CameraPersp initialCam;
+    initialCam.setPerspective( 35.0f, getWindowAspectRatio(), 0.1, 10000 );
+    mMayaCam.setCurrentCam( initialCam );
 }
 
 
-void DmxSampleApp::update()
+void Dmx3DApp::mouseDown( MouseEvent event )
+{
+    if( event.isAltDown() )
+        mMayaCam.mouseDown( event.getPos() );
+}
+
+
+void Dmx3DApp::mouseDrag( MouseEvent event )
+{
+    if( event.isAltDown() )
+        mMayaCam.mouseDrag( event.getPos(), event.isLeftDown(), event.isMiddleDown(), event.isRightDown() );
+}
+
+
+void Dmx3DApp::update()
 {
     updateTriggers();
     
@@ -142,23 +171,14 @@ void DmxSampleApp::update()
 }
 
 
-void DmxSampleApp::updateTriggers()
+void Dmx3DApp::updateTriggers()
 {
-    Vec2f pos;
     for( size_t k=0; k < mTriggers.size(); k++ )
-    {
-        // move the trigger
-        pos = ( mTriggers[k].pos - getWindowCenter() );
-        pos.rotate( mTriggers[k].speed * mSpeed );
-        pos += getWindowCenter();
-        
-        mTriggers[k].pos = pos;
-    }
-    
+        mTriggers[k].pos.rotateY( mTriggers[k].speed * mSpeed );
 }
 
 
-void DmxSampleApp::updateFixtures()
+void Dmx3DApp::updateFixtures()
 {
     float dist;
     
@@ -169,7 +189,7 @@ void DmxSampleApp::updateFixtures()
         for( size_t i=0; i < mTriggers.size(); i++ )
         {
             dist = mFixtures[k].pos.distance( mTriggers[i].pos );                           // calculate the fixture-trigger distance
-
+            
             if ( dist <= mTriggers[i].radius )                                              // only consider fixtures inside the trigger's radius
             {
                 mFixtures[k].value += 1.0f - dist / mTriggers[i].radius;                    // the closer, the brighter
@@ -184,44 +204,75 @@ void DmxSampleApp::updateFixtures()
 }
 
 
-void DmxSampleApp::draw()
+void Dmx3DApp::draw()
 {
-	// clear out the window with black
-    gl::clear( Color::gray(0.1f) );
+    // clear out the window with black
+    gl::clear( Color::gray( 0.1f ) );
+    
     gl::enableAlphaBlending();
     
-    float fixtureCircleSize = 15.0f;
-    float triggerCircleSize = 5.0f;
+    // set the camera matrices
+    gl::setMatrices( mMayaCam.getCamera() );
+    
+    ci::gl::color( ColorA( 1.0f, 1.0f, 1.0f, 0.2f ) );
+    drawGrid();
+    
+    float fixtureSize = 0.3f;
+    
     
     // draw the fixtures
     for( size_t k=0; k < mFixtures.size(); k++ )
     {
-        // fill up the circle with the actual value
-        gl::color( Color::white() * mFixtures[k].value );
-        gl::drawSolidCircle( mFixtures[k].pos, fixtureCircleSize );
+        gl::color( Color::white() * 0.3f );
+        gl::drawStrokedCube(mFixtures[k].pos, Vec3f::one() * fixtureSize );
         
-        // draw the contour
-        gl::color( Color::white() );
-        gl::drawStrokedCircle( mFixtures[k].pos, fixtureCircleSize );
-        
-        // draw the channel label
-        if ( mDrawLabels )
-        {
-            gl::color( Color::gray( 0.4f ) );
-            mFont->drawString( to_string( mFixtures[k].dmxChannel ), mFixtures[k].pos + Vec2i( 22, 15 ) );
-        }
+        gl::color( ColorA( 1.0f, 1.0f, 1.0f, mFixtures[k].value ) );
+        gl::drawCube(mFixtures[k].pos, Vec3f::one() * fixtureSize );
     }
-
+    
+    
     // draw the triggers
-    gl::color( Color( 0.87f, 0.26f, 0.28f ) );
+    gl::enableWireframe();
+    gl::color( ColorA( 0.87f, 0.26f, 0.28f, 0.5f ) );
     for( size_t k=0; k < mTriggers.size(); k++ )
+        gl::drawSphere( mTriggers[k].pos, mTriggers[k].radius );
+    gl::disableWireframe();
+    
+    
+    // draw labels
+    if ( mDrawLabels )
     {
-        gl::drawSolidCircle( mTriggers[k].pos, triggerCircleSize );
-        gl::drawStrokedCircle( mTriggers[k].pos, mTriggers[k].radius );
+        gl::setMatricesWindow( getWindowSize() );
+        
+        gl::color( Color::gray( 0.8f ) );
+        
+        Vec2f screenPos;
+        for( auto k=0; k < mFixtures.size(); k++ )
+        {
+            // get the laser screen(2D) position
+            screenPos = Vec2f( 12, 0 ) + mMayaCam.getCamera().worldToScreen( mFixtures[k].pos, getWindowWidth(), getWindowHeight() );
+            mFont->drawString( to_string(mFixtures[k].dmxChannel), screenPos );
+        }
     }
     
     mParams.draw();
 }
 
 
-CINDER_APP_NATIVE( DmxSampleApp, RendererGl )
+void Dmx3DApp::drawGrid( int steps, float size )
+{
+    float halfLineLength = size * steps * 0.5f;     // half line length
+    
+    for(float i=-halfLineLength; i<=halfLineLength; i+=size)
+    {
+        ci::gl::drawLine( ci::Vec3f(i, 0.0f, -halfLineLength), ci::Vec3f(i, 0.0f, halfLineLength) );
+        ci::gl::drawLine( ci::Vec3f(-halfLineLength, 0.0f, i), ci::Vec3f(halfLineLength, 0.0f, i) );
+    }
+    
+    ci::gl::drawCoordinateFrame();
+    gl::color( Color::white() );
+}
+
+
+CINDER_APP_NATIVE( Dmx3DApp, RendererGl )
+

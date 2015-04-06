@@ -100,20 +100,14 @@ void Lasers3DApp::setup()
 void Lasers3DApp::mouseDown( MouseEvent event )
 {
     if( event.isAltDown() )
-    {
         mMayaCam.mouseDown( event.getPos() );
-        event.setHandled();
-    }
 }
 
 
 void Lasers3DApp::mouseDrag( MouseEvent event )
 {
     if( event.isAltDown() )
-    {
         mMayaCam.mouseDrag( event.getPos(), event.isLeftDown(), event.isMiddleDown(), event.isRightDown() );
-        event.setHandled();
-    }
 }
 
 
