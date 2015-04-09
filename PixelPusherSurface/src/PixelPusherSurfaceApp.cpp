@@ -33,6 +33,7 @@ public:
     void keyDown( KeyEvent event );
     void update();
     void updateTexture();
+    void updateTestPattern();
     void updatePushers();
     void draw();
     void drawDebugInfo();
@@ -126,12 +127,35 @@ void PixelPusherSurfaceApp::keyDown( KeyEvent event )
 
 void PixelPusherSurfaceApp::update()
 {
-    updateTexture();
+    
+    if ( mTestPattern )
+        updateTestPattern();
+    else
+        updateTexture();
+    
     updatePushers();
 }
 
 
 void PixelPusherSurfaceApp::updateTexture()
+{
+    ColorA  col;
+    Vec3f   hsv;
+    Vec2i   cursorPos;
+    uint8_t *data       = mOutputSurf.getData();
+    int     numPixels   = mOutputSurf.getWidth() * mOutputSurf.getHeight();
+    double timeNow      = getElapsedSeconds();
+    
+    for( size_t k=0; k < numPixels; k++ )
+    {
+        data[k*3]   = 255 * 0.5f * ( 1.0f + sin( k * 0.1f + mTestSpeed.x * timeNow ) );
+        data[k*3+1] = 255 * 0.5f * ( 1.0f + sin( k * 0.1f + mTestSpeed.y * timeNow ) );
+        data[k*3+2] = 255 * 0.5f * ( 1.0f + sin( k * 0.1f + ( mTestSpeed.x + mTestSpeed.y ) * timeNow ) );
+    }
+}
+
+
+void PixelPusherSurfaceApp::updateTestPattern()
 {
     mTestPos += mTestSpeed;
     
@@ -141,33 +165,25 @@ void PixelPusherSurfaceApp::updateTexture()
     ColorA  col;
     Vec3f   hsv;
     Vec2i   pos;
-    Vec2i   cursorPos;
+    Vec2i   cursorPos = mTestPos + mTestPosOff;
     
+    col = Color( 0.0f, 0.0f, 1.0f );
     for( size_t x=0; x < mOutputSurf.getWidth(); x++ )
     {
         for( size_t y=0; y < mOutputSurf.getHeight(); y++ )
         {
             pos = Vec2i( x, y );
+        
             
-            if ( mTestPattern )
-            {
-                cursorPos = mTestPos + mTestPosOff;
-                
-                if ( pos.x == cursorPos.x && pos.y == cursorPos.y)
-                    col = Color( 1.0f, 0.0f, 0.0f );
-                else if ( pos.x == cursorPos.x )
-                    col = Color( 1.0f, 1.0f, 1.0f );
-                else if ( pos.y == cursorPos.y )
-                    col = Color( 0.0f, 0.0f, 1.0f );
-                else
-                    col = Color::black();
-            }
+            if ( pos.x == cursorPos.x && pos.y == cursorPos.y)
+                col = Color( 1.0f, 0.0f, 0.0f );
+            else if ( pos.x == cursorPos.x )
+                col = Color( 1.0f, 1.0f, 1.0f );
+            else if ( pos.y == cursorPos.y )
+                col = Color( 0.0f, 0.0f, 1.0f );
             else
-            {
-                col.r = 0.5f * ( 1.0f + sin( (float)( x + y ) * 0.1f + mTestSpeed.x * getElapsedSeconds() ) );
-                col.g = 0.5f * ( 1.0f + cos( (float)( x + y ) * 0.1f + mTestSpeed.y * getElapsedSeconds() ) );
-                col.b = 1.0 - 0.5f * ( 1.0f + cos( (float)( x + y ) * 0.1f + 2 * getElapsedSeconds() ) );
-            }
+                col = Color::black();
+        
             
             mOutputSurf.setPixel( pos, col );
         }
