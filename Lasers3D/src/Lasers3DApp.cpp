@@ -67,7 +67,7 @@ void Lasers3DApp::setup()
     
     TlcSerial::listDevices();
     
-    mTlcSerial = TlcSerial::create( "", 1 );
+    mTlcSerial = TlcSerial::create( "tty.usbserial", 1 );
     
     // create a laser object for each channel
     // we'll use LaserObj to store position, direction and value for the preview
@@ -116,11 +116,12 @@ void Lasers3DApp::update()
     float val, offset;
 
     // set some data
+
     for( auto ch=0; ch < mTlcSerial->getNumChannels(); ch++ )
     {
         // use the sine and offset to set each channel value(normalised)
         offset  = M_PI * 2 * (float)ch / (float)mTlcSerial->getNumChannels();
-        val     = ( sin( getElapsedSeconds() + offset ) + 1.0f ) * 0.5f;
+        val     = ( sin( getElapsedSeconds() * 3.0f + offset ) + 1.0f ) * 0.5f;
         
         
         mTlcSerial->setValue( ch, val );        // set the value
@@ -128,7 +129,7 @@ void Lasers3DApp::update()
         mLasers[ch].value = val;                // set the LaserObj value for preview
     }
     
-    // send serial data
+    // send the data to Arduino
     mTlcSerial->sendData();
 }
 

@@ -14,6 +14,8 @@
 		<string>github.com:q-depot/Resonate-Workshop-2015.git</string>
 		<key>AD4B458D0D225ED63FAE0155615993B7D3ECE020</key>
 		<string>git://github.com/cinder/Cinder.git</string>
+		<key>B24A2AC75A18F966F33E9A99FD50FAA9B72FFEAA</key>
+		<string>github.com:q-depot/Cinder-TLC5940Serial.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Lasers3D/xcode/Lasers3D.xcodeproj</string>
@@ -22,7 +24,9 @@
 		<key>8600AA8BE05C8E405BF49B61E0887F1254221ECF</key>
 		<string>../../../..</string>
 		<key>AD4B458D0D225ED63FAE0155615993B7D3ECE020</key>
-		<string>../../../../../..</string>
+		<string>../../../../..</string>
+		<key>B24A2AC75A18F966F33E9A99FD50FAA9B72FFEAA</key>
+		<string>../../../../../blocks/Cinder-TLC5940Serial</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:q-depot/Resonate-Workshop-2015.git</string>
@@ -38,7 +42,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>AD4B458D0D225ED63FAE0155615993B7D3ECE020</string>
 			<key>IDESourceControlWCCName</key>
-			<string>..</string>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B24A2AC75A18F966F33E9A99FD50FAA9B72FFEAA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Cinder-TLC5940Serial</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
