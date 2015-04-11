@@ -51,7 +51,7 @@ void PixelPusherBasicApp::setup()
 {
     setWindowSize( 800, 600 );
 
-    // Create a instance of the Discovery Service
+    // Create an instance of the Discovery Service
     mPusherDiscoveryService = PusherDiscoveryService::create( io_service() );
     PusherDiscoveryService::enableColorCorrection(true);
 
